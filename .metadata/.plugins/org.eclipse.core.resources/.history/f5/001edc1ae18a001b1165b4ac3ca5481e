@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle " data-toggle="collapse" data-target="#navbar" arira-expanded="false" aria-contriols="navbar">
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand nav-item active" href="#" th:href="@{/}"> Back To Menu </a>
+	    </div>
+	   </div>
+	</nav> 
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">			
+		<form action="#" 
+		  th:action="@{/update/{id}(id=${user.id})}" 
+		  th:object="${user}" 
+		  method="post">
+		  <div class="form-group">
+		    <label for="firstName">firstName</label>
+		    <input type="text" th:field="*{firstName}" id="firstName" placeholder="firstName">
+		    
+		    </div>
+		    
+		    <div class="form-group">
+		    <label for="lastName">lastName</label>
+		    <input type="text" th:field="*{lastName}" id="lastName" placeholder="lastName">
+		    
+		    </div>
+		    
+		    <div class="form-group">
+		    <label for="emailId">emailId</label>
+		    <input type="text" th:field="*{emailId}" id="emailId" placeholder="emailId">
+		    
+		    </div>
+		    
+		    <div class="form-group">
+		    <label for="phone">phone</label>
+		    <input type="text" th:field="*{phone}" id="phone" placeholder="phone">
+		   
+		    </div>
+		    
+		    <div class="form-group">
+		    <label for="LinkedIn">LinkedIn</label>
+		    <input type="text" th:field="*{LinkedIn}" id="LinkedIn" placeholder="LinkedIn">
+		    
+		    </div>
+		    
+		    
+		    
+		    <div class="form-group">
+				  <label for="example-date-input" class="col-3 col-form-label">Date Of Birth</label>
+				  <div class="col-10">
+				    <input class="form-control" type="date" value="2011-08-19" th:field="*{dateOfBirth}" id="dateOfBirth" placeholder="dateOfBirth" required autofocus="autofocus">
+			
+				  </div>
+				</div>
+				
+		    
+					    
+		    <div class="form-group">
+		    <label for="applyingForPosition">applyingForPosition</label>
+		    <input type="text" th:field="*{applyingForPosition}" id="applyingForPosition" placeholder="applyingForPosition">
+		    
+		    </div>
+		    
+		    <div class="form-group">
+		    <input type="submit" value="Update User">   
+		    </div>
+		</form>
+			
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
